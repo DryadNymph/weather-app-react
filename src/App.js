@@ -13,6 +13,7 @@ export default function App() {
         <a
           href="https://github.com/DryadNymph/weather-app-react"
           target="_blank"
+          rel="noreferrer"
         >
           open-spurced on GitHub
         </a>
