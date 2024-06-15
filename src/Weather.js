@@ -4,7 +4,7 @@ import "./Weather.css";
 
 export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
-  const [city, setCity] = useState(props.defaultCity);
+
   function handleResponse(response) {
     setWeatherData({
       ready: true,
@@ -43,7 +43,7 @@ export default function Weather(props) {
         <h1>{weatherData.city}</h1>
         <ul>
           <li>{weatherData.date}</li>
-          <li className="text-capitalize">{weatherData.description}</li>
+          <li>{weatherData.description}</li>
         </ul>
         <div className="row mt-3">
           <div className="col-6">

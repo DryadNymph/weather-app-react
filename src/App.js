@@ -5,7 +5,7 @@ export default function App() {
   return (
     <div className="App">
       <div className="container">
-        <Weather />
+        <Weather defaultCity="New York" />
         <footer>
           This project is coded by{" "}
           <a href="https://www.linkedin.com/in/lali-nibladze146151019960916/">
@@ -17,7 +17,7 @@ export default function App() {
             target="_blank"
             rel="noreferrer"
           >
-            open-spurced on GitHub
+            open-sourced on GitHub
           </a>
         </footer>
       </div>
