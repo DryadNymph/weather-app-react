@@ -6,28 +6,11 @@ import WeatherForecastDay from "./WeatherForecastDay";
 export default function WeatherForecast(props) {
   console.log(props);
   let [loaded, setLoaded] = useState(false);
-  let [forecast, setForecast, setWeatherData] = useState(null);
+  let [forecast, setForecast] = useState(null);
 
   useEffect(() => {
     setLoaded(false);
   }, [props.coordinates]);
-
-  function handleResponse(response) {
-    console.log(response.data);
-    setWeatherData({
-      ready: true,
-      coordinates: response.data.coordinates,
-      temperature: response.data.temperature.current,
-      humidity: response.data.temperature.humidity,
-      data: new Date(response.data.time * 1000),
-      description: response.data.condition.description,
-      icon: response.data.condition.icon,
-      wind: response.data.wind.speed,
-      city: response.data.city,
-    });
-    setForecast(response.data.daily);
-    setLoaded(true);
-  }
 
   function handleResponse(response) {
     setLoaded(true);
@@ -40,7 +23,7 @@ export default function WeatherForecast(props) {
       <div className="WeatherForecast">
         <div className="row">
           <div className="col">
-            {/* <WeatherForecastDay data={forecast[0]} /> */}
+            <WeatherForecastDay data={forecast[0]} />
           </div>
         </div>
       </div>
